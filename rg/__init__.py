@@ -1,4 +1,5 @@
 import networkx as nx
+import matplotlib.pyplot as plt
 
 
 class RG:
@@ -13,4 +14,7 @@ class RG:
         return self
 
     def plot(self):
+        pos = nx.drawing.nx_pydot.graphviz_layout(self.G, prog='twopi')
+        nx.draw(self.G, pos)
+        plt.show()
         return self

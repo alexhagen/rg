@@ -1,7 +1,7 @@
 """Install setup.py for defect_detection."""
 from setuptools import setup
 
-REQUIREMENTS = ['numpy', 'matplotlib', 'networkx']
+REQUIREMENTS = ['numpy', 'matplotlib', 'networkx', 'pydot']
 
 setup(name='rg',
       version=0.1,
