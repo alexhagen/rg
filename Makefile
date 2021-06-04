@@ -1,5 +1,5 @@
 TESTS := $(wildcard test/test_*.py)
-PYFILES := $(wildcard defect_detection/*.py)
+PYFILES := $(wildcard rg/*.py)
 
 doc: FORCE
 	sphinx-build -M html doc/source doc/build
