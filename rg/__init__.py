@@ -1,7 +1,7 @@
 """A module for capturing research progress in a graph form."""
 import networkx as nx
 import matplotlib.pyplot as plt
-
+from grave import plot_network
 
 class RG(nx.DiGraph):
     """A class for capturing research progress in graph form.
@@ -27,12 +27,13 @@ class RG(nx.DiGraph):
         """
         self.add_node(branch_name, description=branch_description)
         if parent is not None:
-            self.add_edge(self.nodes[parent], branch_name)
+            self.add_edge(parent, branch_name)
         return self
 
     def plot(self):
         """Plot the research graph as a typical matplotlib graph."""
-        pos = nx.drawing.nx_pydot.graphviz_layout(self, prog='twopi')
-        nx.draw(self, pos)
+        #pos = nx.drawing.nx_pydot.graphviz_layout(self, prog='dot')
+        #nx.draw(self, pos)
+        plot_network(self)
         plt.show()
         return self
